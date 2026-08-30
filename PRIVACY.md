@@ -23,8 +23,10 @@ The extension can store the following in `chrome.storage.local`:
 - filter, naming, and saved site-setup preferences, including the site hostname
   and any search term you explicitly save;
 - a one-time free-trial state;
-- a Lemon Squeezy license key, activation instance ID, product variant ID, and
-  last validation date when you activate Pro;
+- an encrypted Lemon Squeezy license key, activation instance ID, product
+  variant ID, and last validation date when you activate Pro. The encryption
+  key is non-extractable and kept separately by the browser in the extension's
+  private IndexedDB storage;
 - coarse product-health counts: a random report ID, installation cohort day,
   active days, event totals, funnel milestones, and job outcomes.
 
