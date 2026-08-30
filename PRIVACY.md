@@ -3,7 +3,7 @@
 Last updated: August 30, 2026
 
 Resources Downloader is designed to process page resources locally in your
-browser. It does not run background analytics and does not sell personal data.
+browser. It does not collect product analytics and does not sell personal data.
 
 ## What the extension processes
 
@@ -26,13 +26,12 @@ The extension can store the following in `chrome.storage.local`:
 - an encrypted Lemon Squeezy license key, activation instance ID, product
   variant ID, and last validation date when you activate Pro. The encryption
   key is non-extractable and kept separately by the browser in the extension's
-  private IndexedDB storage;
-- coarse product-health counts: a random report ID, installation cohort day,
-  active days, event totals, funnel milestones, and job outcomes.
+  private IndexedDB storage.
 
-Product-health data never contains page URLs, hostnames, filenames, downloaded
-file metadata, or file contents. It leaves the browser only when you explicitly
-copy or save a proof report.
+The extension does not create a local or remote analytics profile. In
+particular, it does not persist event totals, funnel milestones, active-day
+history, page URLs, filenames, downloaded-file metadata, or file contents for
+product measurement.
 
 ## Network services
 

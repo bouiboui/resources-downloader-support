@@ -11,8 +11,7 @@ Include:
 - Resources Downloader version;
 - which action failed: current scan, Reload & rescan, Auto-scroll, Multiple
   pages, Reliable download, normal ZIP, Clean ZIP, or license activation;
-- the visible error text and whether retrying helped;
-- an optional proof report copied from **Privacy & support** in the extension.
+- the visible error text and whether retrying helped.
 
 Never include a license key, order details, private page URL, filename list,
 downloaded content, or personal data in a public issue. For purchases, refunds,
