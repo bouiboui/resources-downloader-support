@@ -1,6 +1,6 @@
 # Resources Downloader privacy policy
 
-Last updated: August 30, 2026
+Last updated: October 8, 2026
 
 Resources Downloader is designed to process page resources locally in your
 browser. It does not collect product analytics and does not sell personal data.
@@ -12,6 +12,10 @@ observe HTTP(S) resources loaded while that user-requested scan is active. It
 uses this information to show previews, filters, file metadata, and download
 choices. Multi-page collection opens only the URLs you paste, in inactive tabs,
 and closes those tabs after scanning.
+
+Network observation is limited to completed-request metadata for the captured
+tab. The extension does not read request bodies, response bodies, cookies, or
+authentication headers, and it does not modify network traffic.
 
 The extension temporarily stores current page titles, page URLs, resource URLs,
 and scan results in `chrome.storage.session` so the side panel can survive a
@@ -61,11 +65,25 @@ support or disclosure is required for security or law.
 
 ## Permissions
 
-The extension uses `scripting`, `webRequest`, `downloads`, `sidePanel`,
-`storage`, and HTTP(S) host access for the user-visible scanning, multi-page,
-ZIP, download, and local-state features described above. It does not use those
-permissions to bypass authentication, paywalls, DRM, download limits, or other
-access controls.
+The extension uses:
+
+- `downloads` to save only files, ZIP archives, manifests, and failure reports
+  that you explicitly request;
+- `scripting` to inspect a selected page and perform an Auto-scroll or
+  multi-page scan that you start;
+- `sidePanel` to keep the review, filtering, selection, and progress interface
+  beside the selected page;
+- `storage` for the temporary session state and local preferences, saved
+  setups, trial state, and encrypted license state described above;
+- `webRequest` to observe completed HTTP(S) resource requests only while a
+  user-requested capture is active for a specific tab;
+- `http://*/*` and `https://*/*` host access because a selected page and its
+  downloadable resources can be on different origins, and multi-page scans can
+  include arbitrary HTTP(S) URLs that you paste.
+
+The extension does not request access to browser history or cookies, does not
+block or alter network requests, and does not use these permissions to bypass
+authentication, paywalls, DRM, download limits, or other access controls.
 
 ## Retention and control
 
